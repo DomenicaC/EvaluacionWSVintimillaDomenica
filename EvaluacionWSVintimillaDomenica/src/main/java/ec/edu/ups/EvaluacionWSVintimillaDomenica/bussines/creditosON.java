@@ -24,7 +24,7 @@ public class creditosON {
 		cliente c = daoCliente.read(credito.getCliente().getCedula());
 		
 		if (c == null) {
-			System.out.println("Cliente no existe");
+			System.out.println("Credito Aprobado");
 		}else {
 			daoCredito.insert(credito);
 			
