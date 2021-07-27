@@ -20,7 +20,7 @@ public class creditosON {
 	@Inject 
 	private ClienteDAO daoCliente;
 	
-	public void insertarCliente(credito credito) {
+	public void insertarCredito(credito credito) {
 		cliente c = daoCliente.read(credito.getCliente().getCedula());
 		if (c == null) {
 			System.out.println("Cliente no existe");
@@ -30,7 +30,7 @@ public class creditosON {
 		
 	}
 	
-	public List<credito> getClientes(){
+	public List<credito> getCreditos(){
 		return daoCredito.getCredito();
 	}
 	
