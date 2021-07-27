@@ -5,6 +5,10 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class credito {
@@ -15,7 +19,11 @@ public class credito {
 	private int monto;
 	private int meses;
 	private Date fechaInicio;
-
+	
+	@OneToOne
+	@JoinColumn(name = "cli_cedula")
+	private cliente cliente;
+	
 	public int getCodigo() {
 		return codigo;
 	}
