@@ -12,15 +12,17 @@ public class SoliCredito {
 
 	@Inject
 	private creditosON onCreditos;
-	
+
 	@WebMethod
 	public String solicitudCred(credito credito) {
-		onCreditos.insertarCredito(credito);
-		return "OK";
+		try {
+			onCreditos.insertarCredito(credito);
+			return "Credito autorizado";
+		} catch (Exception e) {
+			// TODO: handle exception
+			return "Lo siento no se puede hacer la solicitud";
+		}
+
 	}
 	
-	@WebMethod
-	public int sumar(int a, int b) {
-		return a + b;
-	}
 }

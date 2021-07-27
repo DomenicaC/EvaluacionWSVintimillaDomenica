@@ -22,10 +22,12 @@ public class creditosON {
 	
 	public void insertarCredito(credito credito) {
 		cliente c = daoCliente.read(credito.getCliente().getCedula());
+		
 		if (c == null) {
 			System.out.println("Cliente no existe");
 		}else {
 			daoCredito.insert(credito);
+			
 		}
 		
 	}

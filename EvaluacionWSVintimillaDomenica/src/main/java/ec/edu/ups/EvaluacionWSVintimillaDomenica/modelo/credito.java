@@ -1,7 +1,5 @@
 package ec.edu.ups.EvaluacionWSVintimillaDomenica.modelo;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,7 +14,12 @@ public class credito {
 	private int codigo;
 	private int monto;
 	private int meses;
-	private Date fechaInicio;
+	private String fechaInicio;
+	
+	private int numCuota;
+	private String fechaPago;
+	private double valor;
+	
 	
 	@OneToOne
 	@JoinColumn(name = "cli_cedula")
@@ -46,12 +49,36 @@ public class credito {
 		this.meses = meses;
 	}
 
-	public Date getFechaInicio() {
+	public String getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
+	}
+
+	public int getNumCuota() {
+		return numCuota;
+	}
+
+	public void setNumCuota(int numCuota) {
+		this.numCuota = numCuota;
+	}
+
+	public String getFechaPago() {
+		return fechaPago;
+	}
+
+	public void setFechaPago(String fechaPago) {
+		this.fechaPago = fechaPago;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
 	}
 
 	public cliente getCliente() {
