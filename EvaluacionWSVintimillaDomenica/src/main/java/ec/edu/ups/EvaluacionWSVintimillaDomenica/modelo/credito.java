@@ -54,4 +54,12 @@ public class credito {
 		this.fechaInicio = fechaInicio;
 	}
 
+	public cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(cliente cliente) {
+		this.cliente = cliente;
+	}
+
 }

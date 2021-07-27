@@ -28,7 +28,7 @@ public class CreditoDAO {
 		return c;
 	}
 
-	public List<credito> getCredito(int codigo) {
+	public List<credito> getCredito() {
 		String jpq2 = "SELECT c FROM credito c ";
 
 		

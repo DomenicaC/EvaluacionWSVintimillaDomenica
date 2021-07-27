@@ -31,7 +31,9 @@ public class ClienteDAO {
 	public List<cliente> getCliente(String nombre) {
 		String jpq2 = "SELECT c FROM credito c " + "WHERE nombre LIKE ?1 ";
 
+		nombre = nombre + "%";
 		Query query = em.createQuery(jpq2, cliente.class);
+		query.setParameter(1, nombre);
 
 		List<cliente> clientes = query.getResultList();
 		return clientes;
